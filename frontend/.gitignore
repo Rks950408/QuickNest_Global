@@ -95,7 +95,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+# public (commented out to allow public directory)
 
 # Storybook build outputs
 .out
@@ -185,7 +185,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+# public (commented out to allow public directory)
 
 # Storybook build outputs
 .out
