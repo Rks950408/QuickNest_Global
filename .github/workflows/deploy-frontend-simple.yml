@@ -1,11 +1,7 @@
-name: Deploy Frontend to GitHub Pages
+name: Deploy Frontend to GitHub Pages (Simple)
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'frontend/**'
-  pull_request:
     branches: [ main ]
     paths:
       - 'frontend/**'
@@ -21,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -52,13 +48,7 @@ jobs:
         with:
           path: frontend/build
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
