@@ -266,3 +266,75 @@ This project is licensed under the ISC License.
 ---
 
 **QuickNest Global** - Your trusted partner for end-to-end business solutions.
+
+## 🚀 GitHub Pages Deployment
+
+The frontend is automatically deployed to GitHub Pages using GitHub Actions.
+
+### 🌐 Live Website
+- **URL:** https://rks950408.github.io/QuickNest_Global
+- **Auto-deployment:** Triggered on every push to main branch
+- **Build status:** Check the Actions tab in your repository
+
+### 📋 Deployment Setup
+
+1. **Enable GitHub Pages:**
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Set source to "GitHub Actions"
+
+2. **Automatic Deployment:**
+   - Push changes to the `main` branch
+   - GitHub Actions will automatically build and deploy
+   - Check the Actions tab for deployment status
+
+3. **Manual Deployment:**
+   ```bash
+   # Run the deployment script
+   ./deploy-frontend.sh
+   ```
+
+### 🔧 GitHub Actions Workflow
+
+The deployment is handled by `.github/workflows/deploy-frontend.yml`:
+
+- **Triggers:** Push to main branch, PR to main, or manual dispatch
+- **Build:** Installs dependencies and builds React app
+- **Deploy:** Uploads build artifacts to GitHub Pages
+- **Environment:** Uses GitHub Pages environment
+
+### 📁 Frontend Structure
+
+```
+frontend/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   ├── pages/          # Page components
+│   └── index.css       # Tailwind CSS
+├── package.json        # Dependencies and scripts
+└── tailwind.config.js  # Tailwind configuration
+```
+
+### 🛠️ Local Development
+
+```bash
+# Install dependencies
+cd frontend
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+```
+
+### 🌐 Custom Domain (Optional)
+
+To use a custom domain:
+
+1. Add a `CNAME` file to `frontend/public/` with your domain
+2. Configure DNS settings to point to GitHub Pages
+3. Enable custom domain in repository settings
+

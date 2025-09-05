@@ -2,12 +2,15 @@
   "name": "quicknest-portfolio",
   "version": "1.0.0",
   "description": "Professional company portfolio website for QuickNest Global",
+  "homepage": "https://rks950408.github.io/QuickNest_Global",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": ["portfolio", "company", "services", "business"],
   "author": "QuickNest Global",
@@ -24,7 +27,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "gh-pages": "^6.1.1"
   },
   "browserslist": {
     "production": [
