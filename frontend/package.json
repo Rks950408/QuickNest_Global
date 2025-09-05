@@ -1,0 +1,41 @@
+{
+  "name": "quicknest-portfolio",
+  "version": "1.0.0",
+  "description": "Professional company portfolio website for QuickNest Global",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": ["portfolio", "company", "services", "business"],
+  "author": "QuickNest Global",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "framer-motion": "^12.23.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2",
+    "react-scripts": "^5.0.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
