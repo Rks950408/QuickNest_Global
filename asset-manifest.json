@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/QuickNest_Global/static/css/main.249fb46d.css",
+    "main.js": "/QuickNest_Global/static/js/main.673170c0.js",
+    "index.html": "/QuickNest_Global/index.html",
+    "main.249fb46d.css.map": "/QuickNest_Global/static/css/main.249fb46d.css.map",
+    "main.673170c0.js.map": "/QuickNest_Global/static/js/main.673170c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.249fb46d.css",
+    "static/js/main.673170c0.js"
+  ]
+}
