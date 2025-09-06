@@ -1,0 +1,26 @@
+name: Test Deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test
+        run: |
+          echo "Testing GitHub Actions..."
+          echo "Frontend directory contents:"
+          ls -la frontend/
+          echo "Public directory contents:"
+          ls -la frontend/public/
+          echo "Package.json exists:"
+          test -f frontend/package.json && echo "✅ Yes" || echo "❌ No"
