@@ -1,0 +1,42 @@
+name: Simple Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm install --legacy-peer-deps
+
+      - name: Build
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Deploy to gh-pages branch
+        run: |
+          cd frontend
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add build/
+          git commit -m "Deploy to GitHub Pages" || exit 0
+          git subtree push --prefix build origin gh-pages || git push origin `git subtree split --prefix build main`:gh-pages --force
